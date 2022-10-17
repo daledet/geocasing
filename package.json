@@ -9,6 +9,7 @@
   "author": "Dwight Ledet",
   "license": "MIT",
   "dependencies": {
-    "electron": "^21.1.1"
+    "electron": "^21.1.1",
+    "neutriumjs.thermo.iapws97": "^1.2.2"
   }
 }
