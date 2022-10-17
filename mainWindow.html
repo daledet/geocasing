@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>CasingData</title>
+</head>
+
+<body>
+    <hr>
+    <h1 class="m-2">CasingData</h1>
+    <ul></ul>
+    <script>
+        const electron = require('electron');
+        const { ipcRenderer } = electron;
+        const ul = document.querySelector('ul');
+
+        //Add item
+        ipcRenderer.on('item:add', function (e, item) {
+            const li = document.createElement('li');
+            const itemText = document.createTextNode(item);
+            li.appendChild(itemText);
+            ul.appendChild(li);
+        });
+        //Clear items
+        ipcRenderer.on('item:clear', function () {
+            ul.innerHTML = '';
+        });
+
+        //Remove item
+        ul.addEventListener('dblclick', removeItem);
+        function removeItem(e) {
+            e.target.remove();
+        }
+
+    </script>
+</body>
+
+</html>

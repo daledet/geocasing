@@ -1,0 +1,14 @@
+{
+  "name": "casing",
+  "version": "1.0.0",
+  "description": "Casing Data App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Dwight Ledet",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^21.1.1"
+  }
+}
